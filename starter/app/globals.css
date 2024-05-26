@@ -14,19 +14,23 @@ body{
 footer{
   background:rgb(34, 34, 34);
 }
+ 
 
- /* carosel */
-
- .embla {
-  overflow: hidden;
-}
-.embla__container {
-  display: flex;
-}
-.embla__slide {
-  flex: 0 0 100%;
-  min-width: 0;
+.link {
+  /* Common styles for links */
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 16px;
 }
 
+.link.active {
+  /* Styles for active link */
+  font-weight: bold;
+  color: #333; /* Change color as needed */
+}
 
- /* carosel */
+.link:hover {
+  /* Styles for hover effect */
+  color: #666; /* Change color as needed */
+  text-decoration: underline;
+}

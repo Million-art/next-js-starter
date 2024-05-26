@@ -1,9 +1,11 @@
 'use client'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+   const pathname = usePathname();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -31,7 +33,6 @@ const NavBar = () => {
             ></path>
           </svg>
         </button>
-       
       </div>
       <div
         className={`${
@@ -39,20 +40,18 @@ const NavBar = () => {
         } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
       >
         <div className="text-sm lg:flex-grow">
-          <Link href="/"  className="block mt-4 lg:inline-block lg:mt-0 text-blue-500 hover:text-white mr-4">
-              Home
-           </Link>
-          <Link href="/about"  className="block mt-4 lg:inline-block lg:mt-0 text-blue-500 hover:text-white mr-4">
-              About
-             
+          <Link href="/" className={`link ${pathname === '/' ? 'active' : ''} block mt-4 lg:inline-block lg:mt-0 text-blue-500 hover:text-white mr-4`}>
+            Home
           </Link>
-          <Link href="/contact"  className="block mt-4 lg:inline-block lg:mt-0 text-blue-500 hover:text-white">
-              Contact
-           </Link>
+          <Link href="/about" className={`link ${pathname === '/about' ? 'active' : ''} block mt-4 lg:inline-block lg:mt-0 text-blue-500 hover:text-white mr-4`}>
+            About
+          </Link>
+          <Link href="/contact" className={`link ${pathname === '/contact' ? 'active' : ''} block mt-4 lg:inline-block lg:mt-0 text-blue-500 hover:text-white`}>
+            Contact
+          </Link>
         </div>
         <div>
-        <button className="btn btn-primary text-white rounded-lg mt-4 w-26 sm:w-34 bg-transparent">Action Button</button>
-
+          <button className="btn btn-primary text-white rounded-lg mt-4 w-26 sm:w-34 bg-transparent">Action Button</button>
         </div>
       </div>
     </nav>
