@@ -1,0 +1,26 @@
+Pages
+A page is UI that is unique to a route. You can define a page by default exporting a component from a page.js file.
+
+For example, to create your index page, add the page.js file inside the app directory
+
+Then, to create further pages, create a new folder and add the page.js file inside it. 
+For example, to create a page for the /dashboard route, 
+create a new folder called dashboard, and add the page.js file inside it
+
+Layouts
+A layout is UI that is shared between multiple routes. On navigation, layouts preserve state, remain interactive, and do not re-render. 
+Layouts can also be nested.
+
+You can define a layout by default exporting a React component from a layout.js file.
+ The component should accept a children prop that will be populated with a child layout (if it exists) or a page during rendering.
+
+ Root Layout (Required)
+
+The root layout is defined at the top level of the app directory and applies to all routes. 
+This layout is required and must contain html and body tags, allowing you to modify the initial HTML returned from the server.
+
+Nesting Layouts
+By default, layouts in the folder hierarchy are nested, which means they wrap child layouts via their children prop.
+ You can nest layouts by adding layout.js inside specific route segments (folders).
+
+For example, to create a layout for the /dashboard route, add a new layout.js file inside the dashboard folder

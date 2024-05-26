@@ -1,0 +1,14 @@
+Creating Routes
+
+-Next.js uses a file-system based router where folders are used to define routes.
+
+-Each folder represents a route segment that maps to a URL segment. To create a nested route, you can nest folders inside each other.
+-A special page.js file is used to make route segments publicly accessible.
+
+
+parralel route 
+
+Parallel routes are created using named slots. Slots are defined with the @folder convention.
+ For example,  @analytics and @team:
+
+ 5348424096

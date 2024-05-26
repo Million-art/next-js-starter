@@ -1,0 +1,21 @@
+In the app directory, you can modify the <head> HTML elements such as title and meta using the Metadata APIs.
+
+Metadata can be defined by exporting a metadata object or generateMetadata function in a layout.js or page.js file.
+
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Next.js',
+}
+ 
+export default function Page() {
+  return '...'
+}import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Next.js',
+}
+ 
+export default function Page() {
+  return '...'
+}

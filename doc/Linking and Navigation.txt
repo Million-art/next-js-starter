@@ -1,0 +1,44 @@
+ 
+normal link 
+
+    <Link href="/dashboard">Dashboard</Link>
+
+dynamic link
+
+    {posts.map((post) => (
+    <li key={post.id}>
+        <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+    </li>
+    ))}
+
+Active link
+
+    <Link className={`link ${pathname === '/' ? 'active' : ''}`} href="/">Home</Link>
+     
+Scrolling to an id
+
+<Link href="/dashboard#settings">Settings</Link>
+
+useRouter() hook
+The useRouter hook allows you to programmatically change routes from Client Components.
+
+
+redirect function
+For Server Components, use the redirect function instead.
+
+import { redirect } from 'next/navigation'
+ 
+async function fetchTeam(id: string) {
+  const res = await fetch('https://...')
+  if (!res.ok) return undefined
+  return res.json()
+}
+ 
+export default async function Profile({ params }: { params: { id: string } }) {
+  const team = await fetchTeam(params.id)
+  if (!team) {
+    redirect('/login')
+  }
+ 
+  // ...
+}
